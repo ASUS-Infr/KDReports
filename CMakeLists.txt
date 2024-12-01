@@ -80,7 +80,7 @@ set(${PROJECT_NAME}_SOVERSION ${${PROJECT_NAME}_VERSION_MAJOR})
 
 include(FeatureSummary)
 
-option(${PROJECT_NAME}_QT6 "Build against Qt 6" OFF)
+option(${PROJECT_NAME}_QT6 "Build against Qt 6" ON)
 option(${PROJECT_NAME}_STATIC "Build statically" OFF)
 option(${PROJECT_NAME}_TESTS "Build the tests" ON)
 option(${PROJECT_NAME}_EXAMPLES "Build the examples" ON)

@@ -48,9 +48,11 @@ set(SOURCES
     KDReports/KDReportsXmlHelper.cpp
 )
 
+
 add_library(
     kdreports
     ${KDReports_LIBRARY_MODE} ${SOURCES} ${RESOURCES}
+    KDReports/KDReportsXmlParser_p.h KDReports/KDReportsXmlElementHandler.h KDReports/KDReportsXmlHelper.h KDReports/KDReportsVariableType.h KDReports/KDReportsUnit.h KDReports/KDReportsTextElement.h KDReports/KDReportsTextDocumentData_p.h KDReports/KDReportsTextDocument_p.h KDReports/KDReportsTextDocReportLayout_p.h KDReports/KDReportsTableLayout_p.h KDReports/KDReportsTableElement.h KDReports/KDReportsTableBreakingSettingsDialog.h KDReports/KDReportsTableBreakingLogic_p.h KDReports/KDReportsSpreadsheetReportLayout_p.h KDReports/KDReportsReportBuilder_p.h KDReports/KDReportsReport.h KDReports/KDReportsReport_p.h KDReports/KDReportsPreviewWidget.h KDReports/KDReportsPreviewDialog.h KDReports/KDReportsMainTable.h KDReports/KDReportsLayoutHelper_p.h KDReports/KDReportsImageElement.h KDReports/KDReportsHtmlElement.h KDReports/KDReportsHLineTextObject_p.h KDReports/KDReportsHLineElement.h KDReports/KDReportsHeader.h KDReports/KDReportsHeader_p.h KDReports/KDReportsGlobal.h KDReports/KDReportsFrame.h KDReports/KDReportsFontScaler_p.h KDReports/KDReportsErrorDetails.h KDReports/KDReportsErrorDetails_p.h KDReports/KDReportsElementData_p.h KDReports/KDReportsElement.h KDReports/KDReportsChartTextObject_p.h KDReports/KDReportsChartElement.h KDReports/KDReportsCell.h KDReports/KDReportsAutoTableElement.h KDReports/KDReportsAbstractTableElement.h KDReports/KDReportsAbstractReportLayout_p.h KDReports/KDReports.h
 )
 add_library(
     KDReports::kdreports ALIAS kdreports
@@ -63,7 +65,7 @@ else()
 endif()
 
 target_link_libraries(
-    kdreports ${QT_LIBRARIES}
+    kdreports PRIVATE ${QT_LIBRARIES}
 )
 if(KDChart_FOUND)
     target_link_libraries(kdreports KDChart::kdchart)

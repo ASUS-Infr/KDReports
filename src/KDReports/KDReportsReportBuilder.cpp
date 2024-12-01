@@ -57,6 +57,7 @@ void KDReports::ReportBuilder::addBlockElement(const Element &element, Qt::Align
 
     QTextBlockFormat blockFormat;
     blockFormat.setAlignment(horizontalAlignment);
+    blockFormat.setTextIndent(0);
     setupBlockFormat(blockFormat);
 
     if (backgroundColor.isValid())

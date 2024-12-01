@@ -20,6 +20,8 @@ Qt::AlignmentFlag KDReports::XmlHelper::stringToAlignment(const QString &str)
         return Qt::AlignRight;
     else if (str == QLatin1String("hcenter"))
         return Qt::AlignHCenter;
+    else if (str == QLatin1String("justify"))
+        return Qt::AlignJustify;
     else
         qWarning("Unexpected alignment flag in KDReports::Report::stringToAlignment(): %s", qPrintable(str));
     return Qt::AlignLeft;
