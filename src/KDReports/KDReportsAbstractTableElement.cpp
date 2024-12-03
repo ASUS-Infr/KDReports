@@ -20,7 +20,7 @@ public:
     void fillConstraints(QTextTableFormat *tableFormat) const;
 
     qreal m_border = 1.0;
-    QBrush m_borderBrush = QBrush(Qt::darkGray /*like Qt does*/);
+    QBrush m_borderBrush = QBrush(Qt::SolidPattern);
     qreal m_padding = 0.5;
     qreal m_width = 0;
     KDReports::Unit m_unit = KDReports::Millimeters;
@@ -153,7 +153,7 @@ void KDReports::AbstractTableElement::fillTableFormat(QTextTableFormat &tableFor
     tableFormat.setBorder(border());
     tableFormat.setBorderBrush(borderBrush());
     tableFormat.setCellPadding(mmToPixels(padding()));
-    tableFormat.setCellSpacing(0); // HTML-like table borders look so old century
+    tableFormat.setCellSpacing(-1); // HTML-like table borders look so old century
     if (d->m_fontSpecified) {
         QTextCharFormat charFormat = textDocCursor.charFormat();
         charFormat.setFont(d->m_defaultFont);
